@@ -48,32 +48,25 @@ const TIERS: Record<string, { label: string; color: string; badge: string }> = {
   exchange: { label: 'Exchange', color: '#3b82f6', badge: '📊' },
 };
 
-// Prospect partners from the BD list
+// Priority targets: AI inference, verification, trust, content gen, tooling
+// Filtered to services providing proprietary data, heavy compute, or gated APIs
 const PROSPECTS = [
-  { name: 'StackingDao', twitter: 'StackingDao', tier: 'defi', desc: 'Liquid stacking protocol ~9% APY' },
-  { name: 'Zest Protocol', twitter: 'ZestProtocol', tier: 'defi', desc: 'Lending market up to 12.5% APY' },
-  { name: 'Bitflow Finance', twitter: 'Bitflow_Finance', tier: 'defi', desc: 'DEX with up to 60% APY pools' },
-  { name: 'Hermetica', twitter: 'HermeticaFi', tier: 'defi', desc: 'Yield protocol up to 25% APY' },
-  { name: 'Velar', twitter: 'VelarBTC', tier: 'defi', desc: 'DeFi platform 50% APY + rewards' },
-  { name: 'Alex Lab', twitter: 'AlexLabBTC', tier: 'defi', desc: 'AMM for secure Stacks trading' },
-  { name: 'Bluepay x402', twitter: 'bluepayx402', tier: 'infra', desc: 'Machine commerce payment builder' },
-  { name: 'Noble', twitter: 'noble_xyz', tier: 'infra', desc: 'Stablecoin issuer for micropayments' },
-  { name: 'Circle', twitter: 'circle', tier: 'infra', desc: 'USDCx on Stacks for multi-currency' },
-  { name: 'Cronos', twitter: 'cronos_chain', tier: 'infra', desc: 'x402 hackathon host' },
-  { name: 'HeyElsa AI', twitter: 'HeyElsaAI', tier: 'ai', desc: 'Crypto AI agent platform' },
-  { name: 'Daydreams', twitter: 'daydreamsagents', tier: 'ai', desc: 'Autonomous agents on x402 rails' },
-  { name: 'Heurist AI', twitter: 'heurist_ai', tier: 'ai', desc: 'ZK-secured AI infrastructure' },
-  { name: 'Gaianet AI', twitter: 'Gaianet_AI', tier: 'ai', desc: 'Decentralized AI nodes' },
-  { name: 'CreatorBuddy', twitter: 'CreatorBuddyX', tier: 'ai', desc: 'AI content generation' },
-  { name: 'Dexter AI', twitter: 'dexteraisol', tier: 'ai', desc: 'x402 agents and SDK' },
-  { name: 'Zauth', twitter: 'zauthx402', tier: 'security', desc: 'Trust infrastructure for x402' },
-  { name: 'Cybercentry', twitter: 'cybercentry', tier: 'security', desc: 'Security verification endpoints' },
-  { name: 'rawgroundbeef', twitter: 'rawgroundbeef', tier: 'builder', desc: 'openfacilitator + x402jobs creator' },
-  { name: 'whoabuddy', twitter: 'whoabuddydev', tier: 'builder', desc: 'stx402 endpoint builder' },
-  { name: 'Wintermute', twitter: 'wintermute_t', tier: 'exchange', desc: 'OTC liquidity provider' },
-  { name: 'OKX Web3', twitter: 'okxweb3', tier: 'exchange', desc: 'Web3 platform for quests' },
-  { name: 'Crypto.com', twitter: 'cryptocom', tier: 'exchange', desc: 'Real-world finance partner' },
-  { name: 'Cashie CARV', twitter: 'CashieCARV', tier: 'infra', desc: 'Giveaway tool using x402' },
+  // AI Agents & Inference (6)
+  { name: 'HeyElsa AI', twitter: 'HeyElsaAI', tier: 'ai', desc: 'Crypto AI agent - autonomous payments + thesis exploration' },
+  { name: 'Daydreams', twitter: 'daydreamsagents', tier: 'ai', desc: 'Autonomous agents - omnichain AI inference on x402 rails' },
+  { name: 'Heurist AI', twitter: 'heurist_ai', tier: 'ai', desc: 'ZK-secured AI infrastructure - pay-per-use inference' },
+  { name: 'Gaianet AI', twitter: 'Gaianet_AI', tier: 'ai', desc: 'Decentralized AI nodes - self-hosted x402 facilitators' },
+  { name: 'CreatorBuddy', twitter: 'CreatorBuddyX', tier: 'ai', desc: 'AI content generation - viral post creation endpoints' },
+  { name: 'Dexter AI', twitter: 'dexteraisol', tier: 'ai', desc: 'x402 agents + SDK - cross-chain bridging automation' },
+  // Security & Trust (2)
+  { name: 'Zauth', twitter: 'zauthx402', tier: 'security', desc: 'Trust infrastructure - endpoint verification for agents' },
+  { name: 'Cybercentry', twitter: 'cybercentry', tier: 'security', desc: 'Security verification - low-cost scans via micropayments' },
+  // Infrastructure & Tooling (5)
+  { name: 'Bluepay x402', twitter: 'bluepayx402', tier: 'infra', desc: 'Machine commerce builder - instant sBTC settlements' },
+  { name: 'rawgroundbeef', twitter: 'rawgroundbeef', tier: 'builder', desc: 'openfacilitator + x402jobs - non-custodial micropayments' },
+  { name: 'Noble', twitter: 'noble_xyz', tier: 'infra', desc: 'Stablecoin issuer - x402 micropayments + volume growth' },
+  { name: 'Cashie CARV', twitter: 'CashieCARV', tier: 'infra', desc: 'Giveaway + payment tool - ERC-8004 reward distribution' },
+  { name: 'Cronos', twitter: 'cronos_chain', tier: 'infra', desc: 'x402 hackathon host - driving cross-chain adoption' },
 ];
 
 // ==================== HTML TEMPLATES ====================
